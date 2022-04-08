@@ -33,7 +33,8 @@
                 // make API call with parameters and use promises to get response
                 fetch("https://tul8dc11vf.execute-api.us-west-1.amazonaws.com/dev", requestOptions)
                 .then(response => response.text())
-                .then(result => alert(JSON.parse(result).body))
+                .then(result => document.getElementById('srcp').value)
+                // .then(result => alert(JSON.parse(result).body))
                 .catch(error => console.log('error', error));
             }
         </script>
