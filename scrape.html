@@ -15,6 +15,10 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <script>
+            function getinnerText(text_obtained){
+                let text = text_obtained;
+                document.getElementById("srcp").innerText = text;
+            }
             // define the callAPI function that takes a first name and last name as parameters
             var callAPI = (stateName)=>{
                 // instantiate a headers object
@@ -31,16 +35,14 @@
                     redirect: 'follow'
                 };
                 // make API call with parameters and use promises to get response
-                var x = document.getElementById('srcp');
-                // x.value = "GeeksforGeeks";
                 fetch("https://tul8dc11vf.execute-api.us-west-1.amazonaws.com/dev", requestOptions)
                 .then(response => response.text())
                 // .then(result => document.getElementById('srcp').value = JSON.parse(result).body)
-                .then(result => x.value = JSON.parse(result).body)
                 .then(alert('Scrapped Data available'))
-
-                // .then(result => alert(JSON.parse(result).body))
+                .then(result => alert(JSON.parse(result).body))
+                .then(getinnerText(result))
                 .catch(error => console.log('error', error));
+
             }
         </script>
     </head>
