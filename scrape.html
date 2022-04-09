@@ -21,6 +21,7 @@
             }
             // define the callAPI function that takes a first name and last name as parameters
             var callAPI = (stateName)=>{
+                document.getElementById("srcp").innerText = 'Fetching data...';
                 // instantiate a headers object
                 var myHeaders = new Headers();
                 // add content type header to object
