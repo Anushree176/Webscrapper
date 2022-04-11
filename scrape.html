@@ -41,7 +41,7 @@
                 .then(response => response.text())
                 // .then(result => document.getElementById('srcp').value = JSON.parse(result).body)
                 // .then(alert('Scrapped Data available'))
-                .then(result => alert(JSON.parse(result).body))
+                .then(result => document.getElementById("scrp").value = JSON.parse(result).body)
                 //.then(getinnerText(result))
                 .catch(error => console.log('error', error));
 
