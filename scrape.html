@@ -25,7 +25,8 @@
                 // instantiate a headers object
                 var myHeaders = new Headers();
                 // add content type header to object
-                myHeaders.append("Content-Type", "application/json");
+                myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+                myHeaders.append("Accept","application/json")
                 // using built in JSON utility package turn object to string and store in a variable
                 var raw = JSON.stringify({"mystate":stateName});
                 // create a JSON object with parameters for API call and store in a variable
@@ -41,7 +42,7 @@
                 // .then(result => document.getElementById('srcp').value = JSON.parse(result).body)
                 .then(alert('Scrapped Data available'))
                 .then(result => alert(JSON.parse(result).body))
-                .then(getinnerText(result))
+                //.then(getinnerText(result))
                 .catch(error => console.log('error', error));
 
             }
