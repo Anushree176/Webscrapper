@@ -15,13 +15,13 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <script>
-            function getinnerText(text_obtained){
-                let text = text_obtained;
-                document.getElementById("srcp_data").innerText = text;
-            }
+            // function getinnerText(text_obtained){
+            //     let text = text_obtained;
+            //     document.getElementById("srcp_data").innerText = text;
+            // }
             // define the callAPI function that takes a first name and last name as parameters
             var callAPI = (stateName)=>{
-                document.getElementById("srcp_data").innerText = 'Fetching data...';
+                document.getElementById("srcp").innerText = 'Fetching data...';
                 // instantiate a headers object
                 var myHeaders = new Headers();
                 // add content type header to object
@@ -84,7 +84,7 @@
                 <div class="d-flex justify-content-center w-100 h-100">
                     <div class="text-center form-group w-100 row mt-5 h-100">
                         <textarea class="form-control h-100 opacity-50" id="scrp" readonly>
-                            <p id="srcp_data"></p>
+                        
                         </textarea>
                     </div>
                 
