@@ -36,18 +36,22 @@
                     body: raw,
                     redirect: 'follow'
                 };
-                var obj = {};
-                var json_result = JSON.stringify(obj);
+                
+                // var json_result = new JSON();
+
                 // make API call with parameters and use promises to get response
                 fetch("https://og8jjyt5yj.execute-api.us-east-1.amazonaws.com/dev", requestOptions)
                 .then(response => response.text())
                 // .then(result => document.getElementById('srcp').value = JSON.parse(result).body)
                 // .then(alert('Scrapped Data available'))
-                // .then(result => document.getElementById("scrp").value = JSON.parse(result).body)
-                .then(result => json_result = JSON.parse(result).body)
+                .then(result => document.getElementById("scrp").value = json2Table(JSON.parse(result).body))
+                // .then(result => json_result = JSON.parse(result).body)
                 .then(alert(json_result))
                 //.then(getinnerText(result))
                 .catch(error => console.log('error', error));
+
+                // output = document.getElementById("scrp");
+                // output.innerHTML = json2Table(result);
 
             }
         </script>
@@ -89,7 +93,7 @@
             <div class="container px-4 px-lg-5 d-flex h-50 align-items-center justify-content-center w-100">
                 <div class="d-flex justify-content-center w-100 h-100">
                     <div class="text-center form-group w-100 row mt-5 h-100" style="overflow-y: scroll">
-                        <table class="table table-bordered table-hover text-white" id="scrp">
+                        <!-- <table class="table table-bordered table-hover text-white" id="scrp">
                             <thead>
                                 <tr>
                                     <th>School Name</th>
@@ -107,7 +111,10 @@
                             <tbody>
                 
                             </tbody>
-                        </table>
+                        </table> -->
+                        <P id="scrp">
+                            
+                        </P>
                         <!-- <textarea class="form-control h-100 opacity-50" id="scrp" readonly>
                         </textarea> -->
                     </div>

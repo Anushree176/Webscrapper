@@ -32,20 +32,3 @@ function json2Table(json) {
 
   return table;
 }
-
-data =[{
-  "first_name": "Murray",
-  "last_name": "Folkerts",
-  "company": "Mann, Osinski and Boyle"
-}, {
-  "first_name": "Tiff",
-  "last_name": "Bugdell",
-  "company": "Auer-Abernathy"
-}, {
-  "first_name": "Dalenna",
-  "last_name": "Sandcroft",
-  "company": "Fay and Sons"
-}]
-
-output = document.getElementById('output')
-output.innerHTML = json2Table(data)
