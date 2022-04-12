@@ -36,6 +36,8 @@
                     body: raw,
                     redirect: 'follow'
                 };
+                var obj = {};
+                var json_result = JSON.stringify(obj);
                 // make API call with parameters and use promises to get response
                 fetch("https://og8jjyt5yj.execute-api.us-east-1.amazonaws.com/dev", requestOptions)
                 .then(response => response.text())
